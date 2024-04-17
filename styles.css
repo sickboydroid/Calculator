@@ -9,14 +9,15 @@ body {
 }
 
 .container {
-  width: 450px;
-  height: 530px;
+  width: 400px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 6px solid black;
+  border: 8px solid black;
   border-top: 0px solid;
+  border-bottom: 15px solid black;
   border-radius: 3px;
 }
 
@@ -26,7 +27,7 @@ body {
   color: white;
   align-self: left;
   width: 100%;
-  border: 6px solid black;
+  border: 8px solid black;
   border-radius: 3px;
 }
 
@@ -38,33 +39,33 @@ body {
 }
 
 .display-text {
-  font-size: 45px;
+  font-size: 65px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .key-pad {
   display: flex;
-  width: 450px;
+  width: 400px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
 #backspace {
-  width: 180px;
+  width: 160px;
 }
 
 #equals {
-  width: 180px;
+  width: 160px;
 }
 
 #zero {
-  width: 270px;
+  width: 240px;
 }
 
 button {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   font-weight: bold;
   font-size: medium;
   border: 2px solid black;
