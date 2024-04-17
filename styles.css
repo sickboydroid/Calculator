@@ -39,7 +39,7 @@ body {
 }
 
 .display-text {
-  font-size: 65px;
+  font-size: 60px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -91,7 +91,7 @@ button {
 }
 
 .selected-operator-button {
-  background-color: rgb(99, 125, 153);
+  background-color: rgb(154, 185, 218);
 }
 
 .disabled-btn {

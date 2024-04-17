@@ -7,7 +7,7 @@ const decimal = document.querySelector("#decimal");
 const sign = document.querySelector("#sign");
 const percent = document.querySelector("#percent");
 const backspace = document.querySelector("#backspace");
-const DISPLAY_CHARACTER_LIMIT = 12;
+const DISPLAY_CHARACTER_LIMIT = 9;
 
 /* EVENT LISTENERS */
 numbers.forEach((btn) => {
