@@ -7,12 +7,12 @@ const decimal = document.querySelector("#decimal");
 const sign = document.querySelector("#sign");
 const percent = document.querySelector("#percent");
 const backspace = document.querySelector("#backspace");
-const DISPLAY_CHARACTER_LIMIT = 12;
+const DISPLAY_CHARACTER_LIMIT = 9;
 
 /* EVENT LISTENERS */
 numbers.forEach((btn) => {
   btn.addEventListener("click", () => {
-    if (isLastEntryNunber()) {
+    if (isLastEntryNumber()) {
       if (display.textContent.length === DISPLAY_CHARACTER_LIMIT) return;
       display.textContent = String(
         Number(display.textContent + btn.textContent)
@@ -45,7 +45,7 @@ equals.addEventListener("click", () => {
 });
 
 decimal.addEventListener("click", () => {
-  if (isLastEntryNunber()) {
+  if (isLastEntryNumber()) {
     if (display.textContent.includes(".")) return;
     display.textContent += ".";
   } else {
@@ -61,7 +61,7 @@ allClear.addEventListener("click", () => {
 });
 
 backspace.addEventListener("click", () => {
-  if (!isLastEntryNunber()) return;
+  if (!isLastEntryNumber()) return;
   display.textContent = display.textContent.slice(
     0,
     display.textContent.length - 1
@@ -136,7 +136,7 @@ function isOperator(value) {
   return ["-", "+", "/", "x", "^"].some((operator) => value === operator);
 }
 
-function isLastEntryNunber() {
+function isLastEntryNumber() {
   return isNumber(calcDeque.at(-1));
 }
 
@@ -147,9 +147,10 @@ function isLastEntryOperator() {
 function roundToFit(number) {
   const strNumber = String(number);
   if (strNumber.length > DISPLAY_CHARACTER_LIMIT) {
-    const numDecimalPlaces =
+    let numDecimalPlaces =
       DISPLAY_CHARACTER_LIMIT - String(parseInt(strNumber)).length - 1;
-    if (numDecimalPlaces >= 0) return Number(number.toFixed(numDecimalPlaces));
+    if (numDecimalPlaces < 0) numDecimalPlaces = 0;
+    return Number(number.toFixed(numDecimalPlaces));
   }
   return number;
 }
